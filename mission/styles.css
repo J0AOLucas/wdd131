@@ -1,0 +1,50 @@
+.main-content {
+  margin: 80px auto;
+  border: solid 2px rgb(210, 209, 209);
+  max-width: 80%;
+}
+
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(0, 87, 158);
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+.group {
+  padding: 40px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+hr {
+  color: rgba(255, 255, 255, 0.452);
+}
+
+.formated-text {
+  font-style: italic;
+}
+
+.paragraphs-content {
+  margin: 40px 0;
+}
+
+.logo {
+  text-align: center;
+}
+
+img {
+  width: 150px;
+}
+
+p, li {
+  font-size: 18px;
+}
