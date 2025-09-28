@@ -1,3 +1,13 @@
+body.light {
+  background: #fff;
+  color: #000;
+}
+
+body.dark {
+  background: #333;
+  color: #fff;
+}
+
 .main-content {
   margin: 80px auto;
   border: solid 2px rgb(210, 209, 209);
@@ -29,7 +39,7 @@ hr {
   color: rgba(255, 255, 255, 0.452);
 }
 
-.formated-text {
+#formated-text {
   font-style: italic;
 }
 
