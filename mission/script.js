@@ -15,5 +15,6 @@ function changeTheme() {
     subtitle.style.color = '#00bfff'
   } else {
     logo.src = './src/images/byui-logo-blue.webp'
+    subtitle.style.color = '#00579e'
   }
 }
