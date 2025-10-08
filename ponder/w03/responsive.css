@@ -29,7 +29,13 @@ section {
 nav a {
     padding: 20px;
     color: black;
-    display: none;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    /*display: none;*/
+}
+.hide {
+  display: none;
 }
 nav a:hover {
     text-decoration: none;
@@ -45,7 +51,17 @@ nav a:hover {
     height: 4px;
     background-color: black;
     margin: 5px 0;
+    transition: 0.4s;
 }
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+          
 footer {
     text-align: center;
 }
@@ -53,18 +69,23 @@ footer {
 @media screen and (min-width: 700px) {
   nav {
     text-align: end;
+    display: block;
   }
   nav a {
     display: inline;
     padding: 20px;
     color: black;
     text-decoration: none;
+    border: none;
   }
   .menu-btn {
     display: none;
   }
   main {
     grid-template-columns: 1fr 1fr;
+  }
+  .hide {
+    display: inline;
   }
 }
 
