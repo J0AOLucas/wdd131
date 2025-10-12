@@ -22,7 +22,6 @@ li {
   display: none;
 }
 
-/* Estilos para o menu mobile */
 h2 {
   cursor: pointer;
   user-select: none;
@@ -63,9 +62,19 @@ h2 {
   margin: 20px 30px;
 }
 dialog img {
-  width: 90%;
+  width: 60%;
+  max-width: 800px;
+  height: auto;
   display: block;
-  margin: 20vh auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+dialog {
+  position: relative;
 }
 dialog {
   width: 100%;
@@ -92,11 +101,19 @@ dialog {
     display: none;
   }
 
+  #mobile-menu {
+    display: block !important;
+  }
+
   li {
     display: block;
   }
   li a {
     text-decoration: none;
     color: #fff;
+  }
+  .close-viewer {
+    position: absolute;
+    right: 15vh;
   }
 }
