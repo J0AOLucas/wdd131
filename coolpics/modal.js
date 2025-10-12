@@ -4,7 +4,6 @@ const modal = document.querySelector('dialog');
 const modalImage = modal.querySelector('img');
 const closeButton = modal.querySelector('.close-viewer');
 
-// Elementos do menu mobile
 const menuButton = document.querySelector('h2');
 const mobileMenu = document.getElementById('mobile-menu');
 
