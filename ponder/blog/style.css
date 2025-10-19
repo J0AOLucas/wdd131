@@ -18,7 +18,7 @@ nav {
   display: inline;
 }
 .title {
-  color: red;
+  color: rgb(141, 7, 7);
 }
 .book {
   display: inline;
@@ -31,7 +31,7 @@ nav {
   border-width: 2px;
   padding: 15px;
   text-align: end;
-  color: red;
+  color: rgb(141, 7, 7);
 }
 .details {
   border-top: solid;
@@ -53,7 +53,7 @@ nav {
   max-width: 700px;
   margin: 0;
 }
-h3 {
+.author {
   border-top: solid;
   border-width: 2px;
   border-color: rgb(247, 195, 99);
