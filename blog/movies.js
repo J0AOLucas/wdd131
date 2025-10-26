@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				<header class="details">
 					<p><time datetime="2025-07-05">${movie.date}</time></p>
 					<p>Age Range: ${movie.ages}</p>
-					<p>Genre: Fantasy</p>
-					<p aria-label="4 out of 5 stars" title="${movie.stars.length} out of 5 stars">${movie.stars}</p>
+					<p>Genre: ${movie.genre}</p>
+					<p aria-label="${movie.stars.length} out of 5 stars" title="${movie.stars.length} out of 5 stars">${movie.stars}</p>
         </header>
 				<div class="box-book">
 					<h2 class="title">${movie.title}</h2>
