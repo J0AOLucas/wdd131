@@ -159,12 +159,11 @@ form {
 .credit-card-back::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   right: 0;
   height: 50px;
   background: #1a1a1a;
-  border-radius: 15px 15px 0 0;
 }
 
 .cvc-container {
