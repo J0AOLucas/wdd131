@@ -28,7 +28,6 @@ form {
   padding-bottom: 20px;
 }
 
-/* Cartão de Crédito - Parte da Frente */
 .credit-card-front {
   display: grid;
   grid-template-columns: 1fr;
@@ -127,7 +126,6 @@ form {
   font-size: 1.2rem;
 }
 
-/* Cartão de Crédito - Parte de Trás (CVC) */
 .credit-card-back {
   display: grid;
   grid-template-columns: 1fr;
@@ -145,7 +143,6 @@ form {
   grid-column: 2 / 4;
 }
 
-/* Listra magnética no topo do cartão de trás */
 .credit-card-back::before {
   content: '';
   position: absolute;
@@ -186,7 +183,6 @@ form {
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* Botão Submit */
 button[type="submit"] {
   grid-column: 3;
   justify-self: end;
@@ -213,7 +209,6 @@ button[type="submit"]:active {
   transform: scale(0.98);
 }
 
-/* Feedback Message */
 #feedback {
   grid-column: 1;
   padding: 15px;
@@ -240,7 +235,6 @@ button[type="submit"]:active {
   display: none;
 }
 
-/* Validação visual */
 input:invalid:not(:placeholder-shown) {
   border-color: #ff6b6b;
   background: rgba(255, 107, 107, 0.2);
@@ -250,7 +244,6 @@ input:valid:not(:placeholder-shown) {
   border-color: #51cf66;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
   .credit-card-front,
   .credit-card-back {

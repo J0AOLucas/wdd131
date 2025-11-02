@@ -58,19 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cardNumber = cardNumberInput.value.replace(/\s/g, '');
     if (cardNumber !== '1234123412341234') {
-      showFeedback('Número do cartão inválido. Use: 1234 1234 1234 1234', 'error');
+      showFeedback('Invalid Number. Use: 1234 1234 1234 1234', 'error');
       cardNumberInput.focus();
       return;
     }
 
     if (!monthInput.value || monthInput.value.length !== 2) {
-      showFeedback('Por favor, preencha o mês de expiração (MM)', 'error');
+      showFeedback('Please fill in the expiration month (MM)', 'error');
       monthInput.focus();
       return;
     }
 
     if (!yearInput.value || yearInput.value.length !== 2) {
-      showFeedback('Por favor, preencha o ano de expiração (YY)', 'error');
+      showFeedback('Please fill in the expiration year (YY)', 'error');
       yearInput.focus();
       return;
     }
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enteredYear = parseInt(yearInput.value);
 
     if (enteredMonth < 1 || enteredMonth > 12) {
-      showFeedback('Mês inválido. Use um valor entre 01 e 12', 'error');
+      showFeedback('Invalid month. Use a value between 01 and 12', 'error');
       monthInput.focus();
       return;
     }
@@ -89,13 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentMonth = currentDate.getMonth() + 1;
 
     if (enteredYear < currentYear) {
-      showFeedback('O cartão está expirado. Por favor, use uma data válida.', 'error');
+      showFeedback('The card is expired. Please use a valid date.', 'error');
       monthInput.focus();
       return;
     }
 
     if (enteredYear === currentYear && enteredMonth < currentMonth) {
-      showFeedback('O cartão está expirado. Por favor, use uma data válida.', 'error');
+      showFeedback('The card is expired. Please use a valid date.', 'error');
       monthInput.focus();
       return;
     }
@@ -104,18 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const cvc = cvcInput.value.trim();
 
     if (!cardHolder) {
-      showFeedback('Por favor, preencha o nome do titular do cartão', 'error');
+      showFeedback('Please fill in the cardholder name', 'error');
       document.getElementById('cardHolder').focus();
       return;
     }
 
     if (!cvc || cvc.length < 3) {
-      showFeedback('Por favor, preencha o CVC/CVV (3 ou 4 dígitos)', 'error');
+      showFeedback('Please fill in the CVC/CVV (3 or 4 digits)', 'error');
       cvcInput.focus();
       return;
     }
 
-    showFeedback('Cartão de crédito validado com sucesso! ✅', 'success');
+    showFeedback('Credit card validated successfully! ✅', 'success');
     
     setTimeout(() => {
       form.reset();
