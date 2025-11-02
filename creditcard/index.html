@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Author" content="Joao Lucas">
+  <meta name="description" content="Credit Card Form - WDD 131">
+  <title>Credit Card Form - WDD 131</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <form id="checkoutCreditCard" action="" method="get" novalidate>
+      <!-- Cartão de Crédito - Parte da Frente -->
+      <div class="credit-card-front" role="group" aria-labelledby="cardLabel">
+        <p class="card-total">Total: $199</p>
+        <div class="card-number-container">
+          <label for="creditCardNumber">CARD NUMBER:</label>
+          <input
+            type="text"
+            id="creditCardNumber"
+            name="creditCardNumber"
+            placeholder="1234 1234 1234 1234"
+            maxlength="19"
+            required
+          />
+        </div>
+        <div class="card-holder-container">
+          <label for="cardHolder">CARD HOLDER:</label>
+          <input
+            type="text"
+            id="cardHolder"
+            name="cardHolder"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+        <div id="cardExpiration">
+          <label id="expirationDate" for="month">EXPIRATION</label>
+          <div class="expiration-inputs">
+            <input 
+              type="text" 
+              id="month" 
+              name="expMonth" 
+              placeholder="MM" 
+              maxlength="2"
+              aria-labelledby="expirationDate"
+            />
+            <span>/</span>
+            <input 
+              type="text" 
+              id="year" 
+              name="expYear" 
+              placeholder="YY" 
+              maxlength="2"
+              aria-labelledby="expirationDate"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Cartão de Crédito - Parte de Trás (CVC) -->
+      <div class="credit-card-back" role="group" aria-label="Card back side">
+        <div class="cvc-container">
+          <label for="cvc">CVC/CVV:</label>
+          <input
+            type="text"
+            id="cvc"
+            name="cvc"
+            placeholder="123"
+            maxlength="4"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Mensagem de Feedback -->
+      <div id="feedback" class="hide" role="alert"></div>
+
+      <!-- Botão Submit -->
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
