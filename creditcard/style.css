@@ -21,7 +21,8 @@ main {
 
 form {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 30% 70% 20%;
+  grid-template-rows: auto auto auto;
   gap: 20px;
   background: transparent;
   position: relative;
@@ -30,8 +31,8 @@ form {
 
 .credit-card-front {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
   gap: 20px;
   background: #e0e0e0;
   border-radius: 15px;
@@ -41,17 +42,26 @@ form {
   position: relative;
   z-index: 2;
   grid-column: 1 / 3;
+  min-height: 260px;
 }
 
 .card-total {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
-  grid-column: 1;
+  grid-column: 1 / 3;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon {
+  font-size: 1.8rem;
 }
 
 .card-number-container {
   grid-column: 1;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -84,6 +94,7 @@ form {
 
 .card-holder-container {
   grid-column: 1;
+  grid-row: 3;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -94,10 +105,12 @@ form {
 }
 
 #cardExpiration {
-  grid-column: 1;
+  grid-column: 2;
+  grid-row: 3;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-self: start;
 }
 
 .expiration-inputs {
@@ -137,9 +150,9 @@ form {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1;
-  margin-top: -80px;
+  margin-top: -200px;
   overflow: hidden;
-  max-height: 180px;
+  min-height: 250px;
   grid-column: 2 / 4;
 }
 
@@ -159,6 +172,7 @@ form {
   flex-direction: column;
   gap: 8px;
   margin-top: 20px;
+  align-items: flex-end;
 }
 
 .cvc-container label {
@@ -175,7 +189,7 @@ form {
   padding: 12px;
   color: #333;
   font-size: 1.1rem;
-  width: 100px;
+  width: 80px;
   letter-spacing: 1px;
 }
 
