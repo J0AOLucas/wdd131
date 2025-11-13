@@ -1,0 +1,59 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    max-width: 1280px;
+    margin: auto;
+    padding: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    list-style-type: none;
+}
+
+hr{
+    margin-top: 50px;
+}
+
+.media-card-container .media-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.media-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (min-width: 900px){
+    .media-card-image {
+        max-width: 170px;
+    }
+    .gallery-container .media-card {
+        display: flex;
+        flex-direction: row;
+        max-width: 45%;
+        flex-wrap: nowrap;
+    }
+}
+
+              
