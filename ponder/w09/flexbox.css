@@ -46,12 +46,13 @@ hr{
 
 @media (min-width: 900px){
     .media-card-image {
-        max-width: 170px;
+        max-width: 280px;
     }
     .gallery-container .media-card {
         display: flex;
         flex-direction: row;
-        max-width: 45%;
+        align-items: flex-start;
+        max-width: 47%;
         flex-wrap: nowrap;
     }
 }
