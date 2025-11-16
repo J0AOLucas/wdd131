@@ -1,3 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+h1 {
+  font-family: "Shadows Into Light Two", cursive;
+}
+
+.food-title {
+  color: rgb(44, 143, 209);
+}
+
 .title img {
   width: 200px;
+}
+
+.social img {
+  width: 50px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.input-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 8px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.input-search input {
+  width: 100%;
+  height: 20px;
+  border: none;
+  outline: none;
+
+  border-right: 1px solid #000;
+  margin-right: 8px;
+}
+
+.input-search img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.group-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.group-image img {
+  width: 300px;
+}
+
+.group-image button {
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#dessert-button {
+  margin-bottom: 20px;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #d0d0d0;
+  margin: 5px 0;
+}
+
+.subgroup-image {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 10px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+@media (max-width: 700px) {
+  .description {
+    display: none;
+  }
+  footer {
+    justify-content: center;
+  }
 }
