@@ -1,0 +1,37 @@
+.primary {
+    background-color: #DC0A2D;
+    color: #FFF;
+}
+.secondary {
+    background-color: #595757;
+}
+.accent1 {
+    background-color: #212121;
+    color: #FFF;
+}
+
+.paragraph-example, .colored {
+    font-family: "Roboto", sans-serif, Arial, Helvetica;
+}
+
+.colored {
+    color: #595757;
+}
+
+nav {
+    display: flex;
+    background-color: #DC0A2D;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    color: #FFFFFF;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #595757;
+}
