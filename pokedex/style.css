@@ -1,0 +1,67 @@
+:root {
+    --primary: #DC0A2D;
+    --secondary: #595757;
+    --accent1: #212121;
+    --accent2: #FFFFFF;
+    --accent3: #fec527;
+
+    --font-family: "Roboto", sans-serif, Arial, Helvetica;
+
+}
+body {
+    margin: 0 auto;
+    font-family: var(--font-family);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 10px;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    margin-right: 30px;
+}
+nav ul a {
+    color: var(--accent2);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    color: var(--secondary);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+}
+.search-box img {
+    width: 200px;
+}
+
+.search-box input {
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.search-box button {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.search-box button:hover {
+    background-color: var(--accent3);
+}
