@@ -11,6 +11,7 @@
     --font-family: "Roboto", sans-serif, Arial, Helvetica;
 
 }
+
 body {
     margin: 0 auto;
     font-family: var(--font-family);
@@ -121,6 +122,7 @@ nav ul a:hover {
     display: none;
     background-color: transparent;
     overflow: auto;
+    font-family: 'Press Start 2P', "Roboto", sans-serif, Arial, Helvetica;
     position: fixed;
     height: 100%;
     left: 0%;
@@ -133,11 +135,11 @@ nav ul a:hover {
 }
 
 #modal-content {
-    width: 1000px;
+    width: 900px;
     max-width: 95%;
+    border-radius: 15px;
     height: 700px;
-    background-color: var(--accent4);
-    padding: 20px;
+    background-color: var(--accent2);
 }
 
 #close {
@@ -145,4 +147,48 @@ nav ul a:hover {
     margin: 0;
     cursor: pointer;
 }
+
+/* Modal Content */
+
+#image-background-secondary {
+    text-align: center;
+    height: 300px;
+}
+
+#image-background-secondary img {
+    height: auto;
+}
+
+#modal-pokemon-name {
+    text-align: center;
+    font-size: 50px;
+    color: var(--accent2);
+    margin: 0;
+}
+
+.text-content {
+    background-color: var(--accent2);
+    padding: 10px;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.subgroup {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.text-content p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: var(--secondary);
+}
+
+.text-content p span {
+    color: var(--accent1);
+    margin-left: 50px;
+    direction: rtl;
+}
+
 
