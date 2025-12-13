@@ -115,3 +115,34 @@ nav ul a:hover {
     font-size: 30px;
     color: var(--accent5);
 }
+
+/* Modal */
+#modal {
+    display: none;
+    background-color: transparent;
+    overflow: auto;
+    position: fixed;
+    height: 100%;
+    left: 0%;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-content {
+    width: 1000px;
+    max-width: 95%;
+    height: 700px;
+    background-color: var(--accent4);
+    padding: 20px;
+}
+
+#close {
+    font-size: 50px;
+    margin: 0;
+    cursor: pointer;
+}
+

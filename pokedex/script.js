@@ -1,31 +1,54 @@
 document.addEventListener('DOMContentLoaded', () =>
 {
-    let cards = document.getElementById('cards');
+    const cardsGroup = document.getElementById('cards');
+    const modal = document.getElementById('modal');
+
+
     fetch('https://pokeapi.co/api/v2/pokemon')
     .then(response => response.json())
     .then(async data => {
         let results = data['results']
 
-        for(const element of results) {
-            let generalDetails = await GetGeneralDetails(element['url'])
+        for (const element of results) {
+            let generalDetails = await GetGeneralDetails(element['url']);
             const id = generalDetails['id'];
             const name = generalDetails['name'];
             const types = generalDetails['types'];
             const pokemonImage = GetPhoto(id);
+            const card = document.createElement('div');
+            const closeButtom = document.getElementById('close');
 
-            let card = `
-                <div class='card'>
-                    <h1 class='pokemon-id'>ID: ${id}</h1>
-                    <img class='pokemonImage' src='${pokemonImage}' alt='Pokemon Image'>
-                    <p class='pokemon-name'>${CapitalizeWord(name)}</p>
-                    <div class='image-types'>
-                        ${GetTypeImage(types)}
-                    </div>
+            card.className = 'card';
+            card.innerHTML = `
+                <h1 class='pokemon-id'>ID: ${id}</h1>
+                <img class='pokemonImage' src='${pokemonImage}' alt='Pokemon Image'>
+                <p class='pokemon-name'>${CapitalizeWord(name)}</p>
+                <div class='image-types'>
+                    ${GetTypeImage(types)}
                 </div>
-                `
-            cards.innerHTML += card;
-        };
+            `;
+
+            card.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+
+            closeButtom.addEventListener('click', () => {
+                modal.style.display = 'none';
+            })
+
+            cardsGroup.appendChild(card);
+        }
     })
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    })
+
+    function ShowModal(pokemonData) {
+        
+    }
 
     function GetTypeImage(types)
     {
