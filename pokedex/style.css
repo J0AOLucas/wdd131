@@ -4,6 +4,9 @@
     --accent1: #212121;
     --accent2: #FFFFFF;
     --accent3: #fec527;
+    --accent4: #e8e5e5;
+    --accent5: #077b8d;
+    --accent6: #d9d6d6;
 
     --font-family: "Roboto", sans-serif, Arial, Helvetica;
 
@@ -64,4 +67,51 @@ nav ul a:hover {
 
 .search-box button:hover {
     background-color: var(--accent3);
+}
+
+/* Pokemon box */
+#cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1300px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--accent4);
+    padding: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: var(--accent6);
+}
+
+.pokemonImage {
+    width: 200px;
+}
+
+.type-image {
+    width: 50px;
+}
+.pokemon-id {
+    background-color: var(--secondary);
+    color: var(--accent2);
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 400;
+}
+.pokemon-name {
+    font-size: 30px;
+    color: var(--accent5);
 }
