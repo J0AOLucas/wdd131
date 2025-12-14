@@ -51,7 +51,7 @@ nav ul a:hover {
 
 .search-box input {
     height: 30px;
-    width: 300px;
+    max-width: 300px;
     border: none;
     border-radius: 5px;
     font-family: var(--font-family);
@@ -191,4 +191,21 @@ nav ul a:hover {
     direction: rtl;
 }
 
+.main-content {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.main-content img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+}
+.main-content p {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px;
+}
 
