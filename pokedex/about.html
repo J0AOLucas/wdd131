@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joao Lucas">
+    <meta name="description" content="Learn about the Pokemon franchise history, creators, and evolution from its beginnings in 1996 to today's global phenomenon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>About - Pokedex</title>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <div class="search-box">
+            <img src="./src/images/pokemon-logo.svg" alt="Pokemon logo" width="200" height="60" loading="eager">
+            <label for="search-input" class="visually-hidden">Search for Pokemon by name</label>
+            <input type="text" id="search-input" placeholder="Search Pokemon" aria-label="Search for Pokemon by name">
+            <button id="search-button" type="button" aria-label="Search Pokemon">Search</button>
+        </div>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">Visit API</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content" role="main">
+        <div class="main-content">
+            <h1>Creator</h1>
+            <img src="./src/images/author.jpg" alt="Pokemon franchise creators Satoshi Tajiri and Ken Sugimori" width="400" height="400" loading="lazy">
+            <p>The Pokémon franchise began in 1996 in Japan, created by Satoshi Tajiri
+                and Ken Sugimori. Inspired by Tajiri's childhood hobby of collecting insects,
+                the idea evolved into a game where players would capture and trade creatures 
+                called Pokémon. The first games, Pokémon Red and Green for the Game Boy, quickly
+                became a national phenomenon and later spread worldwide. As the franchise grew,
+                it expanded into an animated TV series starring Ash Ketchum, a trading card
+                game, movies, toys, and countless spin-off games. Today, Pokémon is one of 
+                the most successful entertainment franchises in history, known for its iconic 
+                characters, ongoing game releases, and global community.
+            </p>
+        </div>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Pokedex. All rights reserved.</p>
+    </footer>
+</body>
+</html>
