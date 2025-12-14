@@ -23,12 +23,28 @@ header {
     background-color: var(--primary);
     padding: 10px;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav {
     display: flex;
     margin-right: 30px;
 }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
 nav ul a {
     color: var(--accent2);
     font-size: 25px;
@@ -47,11 +63,15 @@ nav ul a:hover {
 }
 .search-box img {
     width: 200px;
+    max-width: 100%;
+    height: auto;
 }
 
 .search-box input {
     height: 30px;
     max-width: 300px;
+    width: 100%;
+    min-width: 150px;
     border: none;
     border-radius: 5px;
     font-family: var(--font-family);
@@ -125,7 +145,7 @@ nav ul a:hover {
     font-family: 'Press Start 2P', "Roboto", sans-serif, Arial, Helvetica;
     position: fixed;
     height: 100%;
-    left: 0%;
+    left: 0;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -207,5 +227,107 @@ nav ul a:hover {
     text-align: center;
     margin: 0 auto;
     padding: 50px;
+}
+
+/* Responsive Header Styles */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+    
+    .search-box img {
+        width: 150px;
+    }
+    
+    nav ul a {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+    
+    .search-box {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .search-box img {
+        width: 150px;
+    }
+    
+    .search-box input {
+        flex: 1;
+        min-width: 200px;
+        max-width: none;
+    }
+    
+    nav {
+        margin-right: 0;
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav ul a {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .search-box img {
+        width: 120px;
+    }
+    
+    .search-box input {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    
+    .search-box button {
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul a {
+        font-size: 16px;
+        display: block;
+        padding: 8px;
+    }
 }
 

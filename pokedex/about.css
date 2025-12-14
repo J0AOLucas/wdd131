@@ -1,3 +1,49 @@
 .main-content {
-  background-color: brown;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-content h1 {
+    color: var(--accent5);
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.main-content img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.main-content p {
+    max-width: 800px;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 50px;
+    line-height: 1.8;
+    font-size: 18px;
+    color: var(--secondary);
+}
+
+@media screen and (max-width: 768px) {
+    .main-content h1 {
+        font-size: 28px;
+    }
+    
+    .main-content img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .main-content p {
+        padding: 20px;
+        font-size: 16px;
+    }
 }
