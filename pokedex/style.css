@@ -38,6 +38,8 @@ body {
 
 .skip-link:focus {
     top: 0;
+    outline: 3px solid var(--accent3);
+    outline-offset: 2px;
 }
 
 /* Visually hidden but accessible to screen readers */
@@ -137,7 +139,10 @@ nav ul a:focus {
     border-radius: 5px;
     width: 100px;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-color: var(--accent2);
+    color: var(--accent1);
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
 }
 
 .search-box button:hover {
@@ -177,6 +182,7 @@ nav ul a:focus {
     width: 300px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    will-change: transform;
 }
 
 .card:hover {
@@ -207,15 +213,18 @@ nav ul a:focus {
 .pokemon-id {
     background-color: var(--secondary);
     color: var(--accent2);
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 10px;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0;
     font-size: 14px;
+    min-height: 24px;
+    display: inline-block;
 }
 .pokemon-name {
     font-size: 30px;
     color: var(--accent5);
+    font-weight: 600;
 }
 
 /* Modal */
@@ -304,6 +313,8 @@ nav ul a:focus {
     justify-content: space-between;
     font-size: 20px;
     color: var(--secondary);
+    min-height: 30px;
+    align-items: center;
 }
 
 .text-content p span {
@@ -448,5 +459,43 @@ footer p {
         display: block;
         padding: 8px;
     }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .card {
+        will-change: auto;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid var(--accent1);
+    }
+    
+    .search-box input {
+        border: 2px solid var(--accent1);
+    }
+    
+    .search-box button {
+        border: 2px solid var(--accent1);
+    }
+}
+
+/* Ensure sufficient color contrast */
+nav ul a:focus,
+.skip-link:focus {
+    background-color: var(--accent3);
+    color: var(--accent1);
 }
 
