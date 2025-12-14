@@ -3,51 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Author" content="Joao Lucas">
-    <meta name="description" content="More in-depth HTML">
+    <meta name="author" content="Joao Lucas">
+    <meta name="description" content="Explore the world of Pokemon with our interactive Pokedex. Search and discover Pokemon characters, their stats, abilities, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Pokedex</title>
+    <title>Pokedex - Explore Pokemon Characters</title>
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <div class="search-box">
-            <img src="./src/images/pokemon-logo.svg" alt="Pokemon logo">
-            <input type="text" id="search-input" placeholder="Search Pokemon">
-            <button id="search-button">Search</button>
+            <img src="./src/images/pokemon-logo.svg" alt="Pokemon logo" width="200" height="60" loading="eager">
+            <label for="search-input" class="visually-hidden">Search for Pokemon by name</label>
+            <input type="text" id="search-input" placeholder="Search Pokemon" aria-label="Search for Pokemon by name">
+            <button id="search-button" type="button" aria-label="Search Pokemon">Search</button>
         </div>
-        <nav>
+        <nav role="navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="https://pokeapi.co">Visit API</a></li>
+                <li><a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">Visit API</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <div id="cards"></div>
-        <div id="modal">
+    <main id="main-content" role="main">
+        <div id="cards" aria-live="polite" aria-label="Pokemon cards container"></div>
+        <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-pokemon-name" aria-hidden="true">
             <div id="modal-content">
                 <div>
-                    <span id="close">&times;</span>
+                    <button id="close" type="button" aria-label="Close modal">&times;</button>
                     <h1 id="modal-pokemon-name">Name</h1>
                     <div id="image-background-secondary">
-                        <img id="pokemon-modal-photo" src="" alt="Pokemon image">
+                        <img id="pokemon-modal-photo" src="./src/images/bubassaur.png" alt="Pokemon image" loading="lazy">
                     </div>
                 </div>
                 <div class="text-content">
                     <div class="subgroup">
-                        <p>HP<span id="hp"></span></p>
-                        <p>Height<span id="height"></span></p>
-                        <p>Weight<span id="weight"></span></p>
-                        <p>Habilities<span id="habilities"></span></p>
+                        <p>HP<span id="hp" aria-label="Hit points"></span></p>
+                        <p>Height<span id="height" aria-label="Height in meters"></span></p>
+                        <p>Weight<span id="weight" aria-label="Weight in kilograms"></span></p>
+                        <p>Abilities<span id="habilities" aria-label="Pokemon abilities"></span></p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Pokedex. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

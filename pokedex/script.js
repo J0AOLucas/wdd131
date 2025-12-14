@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () =>
             card.className = 'card';
             card.setAttribute('data-pokemon-name', name.toLowerCase());
             card.innerHTML = `
-                <h1 class='pokemon-id'>ID: ${id}</h1>
-                <img class='pokemonImage' src='${pokemonImage}' alt='Pokemon Image'>
+                <h2 class='pokemon-id'>ID: ${id}</h2>
+                <img class='pokemonImage' src='${pokemonImage}' alt='${CapitalizeWord(name)} Pokemon' loading='lazy'>
                 <p class='pokemon-name'>${CapitalizeWord(name)}</p>
                 <div class='image-types'>
                     ${GetTypeImage(types)}
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () =>
     function GetTypeImage(types)
     {
         return types.map(element => 
-            `<img class='type-image' src='./src/images/types/${element['type']['name']}.png' alt='power type'>`
+            `<img class='type-image' src='./src/images/types/${element['type']['name']}.png' alt='${CapitalizeWord(element['type']['name'])} type' loading='lazy'>`
         ).join('');
     }
 
