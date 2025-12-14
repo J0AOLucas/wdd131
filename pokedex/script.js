@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () =>
 {
     const cardsGroup = document.getElementById('cards');
     const modal = document.getElementById('modal');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
     const colors = {
         normal: '#A8A77A',
         fire: '#EE8130',
@@ -21,7 +23,10 @@ document.addEventListener('DOMContentLoaded', () =>
         dark: '#705746',
         steel: '#B7B7CE',
         fairy: '#D685AD',
-};
+    };
+
+    // Store all Pokemon data
+    let allPokemonData = [];
 
     fetch('https://pokeapi.co/api/v2/pokemon')
     .then(response => response.json())
@@ -38,7 +43,16 @@ document.addEventListener('DOMContentLoaded', () =>
             const card = document.createElement('div');
             const closeButtom = document.getElementById('close');
 
+            // Store Pokemon data for search
+            allPokemonData.push({
+                id: id,
+                name: name,
+                details: generalDetails,
+                card: null
+            });
+
             card.className = 'card';
+            card.setAttribute('data-pokemon-name', name.toLowerCase());
             card.innerHTML = `
                 <h1 class='pokemon-id'>ID: ${id}</h1>
                 <img class='pokemonImage' src='${pokemonImage}' alt='Pokemon Image'>
@@ -47,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () =>
                     ${GetTypeImage(types)}
                 </div>
             `;
+
+            // Store card reference
+            allPokemonData[allPokemonData.length - 1].card = card;
 
             card.addEventListener('click', async () => {
                 await UpdateModal(generalDetails)
@@ -66,6 +83,84 @@ document.addEventListener('DOMContentLoaded', () =>
             modal.style.display = 'none';
         }
     })
+
+    // Search functionality
+    function FilterPokemon(searchTerm) {
+        // Remove any existing empty state message
+        const existingMessage = cardsGroup.querySelector('.empty-state');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        if (!searchTerm || searchTerm.trim() === '') {
+            // Show all cards if search is empty
+            allPokemonData.forEach(pokemon => {
+                if (pokemon.card) {
+                    pokemon.card.style.display = 'flex';
+                }
+            });
+            return;
+        }
+
+        const normalizedSearch = searchTerm.toLowerCase().trim();
+        
+        // Use filter to find matching Pokemon
+        const matchingPokemon = allPokemonData.filter(pokemon => {
+            return pokemon.name.toLowerCase().includes(normalizedSearch);
+        });
+
+        // Hide all cards first
+        allPokemonData.forEach(pokemon => {
+            if (pokemon.card) {
+                pokemon.card.style.display = 'none';
+            }
+        });
+
+        // Show only matching cards using forEach
+        matchingPokemon.forEach(pokemon => {
+            if (pokemon.card) {
+                pokemon.card.style.display = 'flex';
+            }
+        });
+
+        // Show message if no results
+        if (matchingPokemon.length === 0) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'empty-state';
+            messageDiv.innerHTML = `<p>No Pokemon found for "${searchTerm}"</p>`;
+            messageDiv.style.textAlign = 'center';
+            messageDiv.style.padding = '50px';
+            messageDiv.style.fontSize = '24px';
+            messageDiv.style.color = '#595757';
+            cardsGroup.appendChild(messageDiv);
+        }
+    }
+
+    // Event listeners for search
+    if (searchButton) {
+        searchButton.addEventListener('click', () => {
+            if (searchInput) {
+                FilterPokemon(searchInput.value);
+            }
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                FilterPokemon(searchInput.value);
+            }
+        });
+
+        // Real-time search with debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                FilterPokemon(searchInput.value);
+            }, 300);
+        });
+    }
 
     function openModal() {
         modal.style.display = 'flex';
